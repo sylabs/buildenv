@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+set -x
+
+yum install --assumeyes  \
+	ca-certificates  \
+	cryptsetup       \
+	gcc              \
+	git              \
+	gpgme-devel      \
+	libseccomp-devel \
+	libuuid-devel    \
+	make             \
+	openssl-devel    \
+	pkgconfig        \
+	squashfs-tools   \
+	sudo
+
+rm -rf /var/cache/yum
+
+echo 'ALL ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers
