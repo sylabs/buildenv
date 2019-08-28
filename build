@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+set -x
+
+apk add --no-cache curl
+
+curl --location https://github.com/gotestyourself/gotestsum/releases/download/v0.3.5/gotestsum_0.3.5_linux_amd64.tar.gz |
+	tar -xOzf - gotestsum > /usr/bin/gotestsum
+
+chown root:root /usr/bin/gotestsum
+
+chmod 0755 /usr/bin/gotestsum
+
+echo 'ALL ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers
