@@ -43,3 +43,18 @@ chown root:root /usr/bin/gotestsum
 chmod 0755 /usr/bin/gotestsum
 
 echo 'ALL ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers
+
+# There's code in singularity that assumes that if rpm is installed on
+# the system it will behave like rpm on a rpm-based distribution. Debian
+# and derivatives configure rpm in a way that makes sense in those
+# systems, but it's not the same as in rpm-based distributions.
+#
+# The tests for the yum conveyor actually check that rpm behaves in that
+# particular way, and FAIL otherwise.
+#
+# Work around this issue by adding macros to satisfy this assumption.
+mkdir -p /etc/rpm
+cat > /etc/rpm/macros <<EOT
+%_var /var
+%_dbpath %{_var}/lib/rpm
+EOT
