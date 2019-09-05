@@ -12,6 +12,9 @@ apt-get update
 # e2fsprogs
 # yum
 # zypper
+#
+# zypper is not available on Ubuntu 18.04, but it is available in latter
+# versions.
 
 env DEBIAN_FRONTEND=noninteractive apt-get install -f -y --no-install-recommends \
 	build-essential                                                          \
@@ -28,8 +31,7 @@ env DEBIAN_FRONTEND=noninteractive apt-get install -f -y --no-install-recommends
 	squashfs-tools                                                           \
 	sudo                                                                     \
 	uuid-dev                                                                 \
-	yum                                                                      \
-	zypper
+	yum
 
 apt-get clean
 
