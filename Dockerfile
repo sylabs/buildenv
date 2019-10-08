@@ -1,8 +1,8 @@
 FROM golang:1.11.13-stretch AS go-1.11
 
-FROM golang:1.12.9-stretch AS go-1.12
+FROM golang:1.12.10-stretch AS go-1.12
 
-FROM golang:1.13.0-buster AS go-1.13
+FROM golang:1.13.1-buster AS go-1.13
 
 FROM golangci/golangci-lint:v1.17.1 AS golangci-lint
 
