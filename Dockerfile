@@ -6,7 +6,7 @@ FROM golang:1.13.1-buster AS go-1.13
 
 FROM golangci/golangci-lint:v1.17.1 AS golangci-lint
 
-FROM centos:7
+FROM centos:8
 
 COPY ./build /
 
