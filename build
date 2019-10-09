@@ -3,9 +3,9 @@
 set -e
 set -x
 
-yum config-manager --set-enabled PowerTools
+dnf install --assumeyes 'dnf-command(config-manager)'
 
-yum update
+yum config-manager --assumeyes --set-enabled PowerTools
 
 yum install --assumeyes  \
 	ca-certificates  \
