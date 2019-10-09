@@ -10,6 +10,7 @@ yum install --assumeyes  \
 	gcc              \
 	git              \
 	gpgme-devel      \
+	iptables         \
 	libseccomp-devel \
 	libuuid-devel    \
 	make             \
