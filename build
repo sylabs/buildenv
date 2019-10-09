@@ -10,6 +10,7 @@ apt-get update
 # cryptsetup
 # debootstrap
 # e2fsprogs
+# iptables
 # yum
 # zypper
 #
@@ -24,6 +25,7 @@ env DEBIAN_FRONTEND=noninteractive apt-get install -f -y --no-install-recommends
 	debootstrap                                                              \
 	e2fsprogs                                                                \
 	git                                                                      \
+	iptables                                                                 \
 	libgpgme11-dev                                                           \
 	libseccomp-dev                                                           \
 	libssl-dev                                                               \
