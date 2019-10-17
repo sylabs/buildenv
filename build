@@ -3,7 +3,7 @@
 set -e
 set -x
 
-apk add --no-cache curl
+apk add --no-cache curl sudo
 
 addgroup -g 1001 user
 adduser -s /bin/ash -D -H -u 1001 -G user user
