@@ -1,4 +1,4 @@
-FROM golang:1.13.1-buster AS go-1.13
+FROM golang:1.13.3-buster AS go-1.13
 
 FROM golangci/golangci-lint:v1.20.0 AS golangci-lint
 
